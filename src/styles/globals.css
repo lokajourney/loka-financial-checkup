@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────
+   Base
+───────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Prevent layout shift from scrollbar appearing */
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background-color: #FAF8F4;
+  color: #243127;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Focus visible
+───────────────────────────────────────────────────────── */
+
+:focus-visible {
+  outline: 2px solid #2E4D33;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Custom scrollbar (webkit)
+───────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(46, 77, 51, 0.2);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(46, 77, 51, 0.35);
+}
+
+/* ─────────────────────────────────────────────────────────
+   Number inputs — remove spinner arrows
+───────────────────────────────────────────────────────── */
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Selection color
+───────────────────────────────────────────────────────── */
+
+::selection {
+  background-color: rgba(46, 77, 51, 0.15);
+  color: #243127;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Tap highlight — remove on mobile
+───────────────────────────────────────────────────────── */
+
+button,
+a,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Smooth animation for framer-motion exit
+───────────────────────────────────────────────────────── */
+
+#root {
+  isolation: isolate;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Utility: visually-hidden (accessibility)
+───────────────────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Print styles — hide interactive elements
+───────────────────────────────────────────────────────── */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

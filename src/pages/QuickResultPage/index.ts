@@ -1,0 +1,1 @@
+export { QuickResultPage } from './QuickResultPage';

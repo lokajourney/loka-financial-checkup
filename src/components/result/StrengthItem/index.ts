@@ -1,0 +1,1 @@
+export { StrengthItem } from './StrengthItem';
